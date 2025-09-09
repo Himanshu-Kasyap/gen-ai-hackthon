@@ -1,46 +1,176 @@
-# Getting Started with Create React App
+# WellnessHub - Mental Wellness Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive wellness dashboard built with the MERN stack, designed to help users track and improve their mental well-being through various interactive features.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+### 📊 Dashboard
+- Personal wellness overview
+- Sleep score tracking
+- Exercise completion monitoring
+- Daily mindfulness minutes
+- Mood rating display
+- Personalized daily schedule
 
-### `npm start`
+### 🧘‍♀️ Exercise & Meditation
+- Multiple meditation and yoga sessions
+- Built-in timer with audio alerts
+- Various duration options (5-25 minutes)
+- Progress tracking
+- Guided breathing exercises
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🥗 Nutrition for Mental Health
+- Curated foods for mental wellness
+- Detailed nutritional information
+- Mental health benefits explanation
+- Categorized by brain food, mood boosting, calming, and gut health
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 💬 AI Wellness Chat
+- 24/7 AI companion for stress relief
+- Contextual responses for common issues
+- Quick suggestion buttons
+- Personalized coping strategies
+- Mindfulness and breathing guidance
 
-### `npm test`
+### 😊 Mood & Activity Tracker
+- Daily mood logging with notes
+- Mood history visualization
+- Activity completion tracking
+- Progress monitoring
+- Wellness goal setting
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🎮 Mind Games
+- Memory challenge games
+- Mental math exercises
+- Mindful word reflection
+- Breathing synchronization games
+- Cognitive function improvement
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- **React 18** with TypeScript
+- **Styled Components** for styling
+- **React Router** for navigation
+- **Axios** for API communication
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- **Node.js** with Express.js
+- **MongoDB** with Mongoose
+- **JWT** for authentication
+- **bcryptjs** for password encryption
+- **Helmet** for security
+- **Rate limiting** for API protection
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB (local or MongoDB Atlas)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd wellness-dashboard
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. **Install dependencies**
+   ```bash
+   npm run install-deps
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Environment Setup**
+   - Copy `server/.env.example` to `server/.env`
+   - Update MongoDB connection string and JWT secret
 
-## Learn More
+4. **Start the application**
+   ```bash
+   # Development mode (both client and server)
+   npm run dev
+   
+   # Or run separately
+   npm run server  # Backend only
+   npm run client  # Frontend only
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:5000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 Project Structure
+
+```
+wellness-dashboard/
+├── client/                 # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/         # Main application pages
+│   │   ├── services/      # API service functions
+│   │   ├── utils/         # Utility functions
+│   │   └── hooks/         # Custom React hooks
+│   └── package.json
+├── server/                # Express backend
+│   ├── config/           # Database and app configuration
+│   ├── controllers/      # Route controllers
+│   ├── middleware/       # Custom middleware
+│   ├── models/          # MongoDB schemas
+│   ├── routes/          # API routes
+│   └── package.json
+└── package.json         # Root package.json
+```
+
+## 🎯 Roadmap
+
+### Phase 1 (Current)
+- ✅ Basic MERN stack setup
+- ✅ Core page implementations
+- ✅ Responsive design
+- ✅ Timer functionality
+- ✅ Interactive games
+
+### Phase 2 (Upcoming)
+- [ ] User authentication system
+- [ ] MongoDB integration
+- [ ] Data persistence
+- [ ] Real-time chat enhancements
+- [ ] Advanced analytics
+
+### Phase 3 (Future)
+- [ ] Mobile app development
+- [ ] Integration with wearable devices
+- [ ] AI-powered recommendations
+- [ ] Community features
+- [ ] Professional therapist connections
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🧠 Mental Health Resources
+
+If you're experiencing a mental health crisis, please reach out:
+- **National Suicide Prevention Lifeline**: 988
+- **Crisis Text Line**: Text HOME to 741741
+- **International Association for Suicide Prevention**: https://www.iasp.info/resources/Crisis_Centres/
+
+## 💪 Acknowledgments
+
+- Mental health professionals for guidance on wellness features
+- Open-source community for incredible tools and libraries
+- Users who provide feedback to improve mental health support
+
+---
+
+Built with ❤️ for mental wellness and well-being.

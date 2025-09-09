@@ -210,6 +210,7 @@ const Exercise: React.FC = () => {
   const [activeTimer, setActiveTimer] = useState<Exercise | null>(null);
   const [timeLeft, setTimeLeft] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
