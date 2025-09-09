@@ -1,0 +1,26 @@
+{
+  "name": "wellness-dashboard",
+  "version": "1.0.0",
+  "description": "A comprehensive wellness dashboard with mood tracking, exercise routines, diet management, and mental health games",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-deps": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [
+    "wellness",
+    "mental-health",
+    "mern",
+    "dashboard",
+    "meditation",
+    "mood-tracker"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
