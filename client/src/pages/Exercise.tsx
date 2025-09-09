@@ -232,7 +232,7 @@ const Exercise: React.FC = () => {
     };
   }, [activeTimer, timeLeft, isPaused]);
 
-  const startExercise = (exercise: Exercise) => {
+  const startExercise = (exercise: ExerciseType) => {
     setActiveTimer(exercise);
     setTimeLeft(exercise.duration * 60); // Convert minutes to seconds
     setIsPaused(false);
