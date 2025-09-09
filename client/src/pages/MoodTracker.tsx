@@ -61,9 +61,9 @@ const MoodOption = styled.button<{ $isSelected: boolean }>`
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  border: 2px solid ${props => props.$isSelected ? '#667eea' : 'rgba(102, 126, 234, 0.2)'};
+  border: 2px solid ${(props: { $isSelected: boolean }) => props.$isSelected ? '#667eea' : 'rgba(102, 126, 234, 0.2)'};
   border-radius: 12px;
-  background: ${props => props.$isSelected ? 'rgba(102, 126, 234, 0.1)' : 'white'};
+  background: ${(props: { $isSelected: boolean }) => props.$isSelected ? 'rgba(102, 126, 234, 0.1)' : 'white'};
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -192,9 +192,9 @@ const ActivitiesGrid = styled.div`
 
 const ActivityButton = styled.button<{ $isCompleted: boolean }>`
   padding: 15px;
-  border: 2px solid ${props => props.$isCompleted ? '#4CAF50' : 'rgba(102, 126, 234, 0.2)'};
+  border: 2px solid ${(props: { $isCompleted: boolean }) => props.$isCompleted ? '#4CAF50' : 'rgba(102, 126, 234, 0.2)'};
   border-radius: 10px;
-  background: ${props => props.$isCompleted ? 'rgba(76, 175, 80, 0.1)' : 'white'};
+  background: ${(props: { $isCompleted: boolean }) => props.$isCompleted ? 'rgba(76, 175, 80, 0.1)' : 'white'};
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: left;
@@ -293,13 +293,13 @@ const MoodTracker: React.FC = () => {
       date: new Date()
     };
 
-    setMoodHistory(prev => [newEntry, ...prev]);
+  setMoodHistory((prev: MoodEntryType[]) => [newEntry, ...prev]);
     setSelectedMood(null);
     setNotes('');
   };
 
   const toggleActivity = (activityId: string) => {
-    setActivities(prev => prev.map(activity =>
+    setActivities((prev: Activity[]) => prev.map((activity: Activity) =>
       activity.id === activityId
         ? { ...activity, completed: !activity.completed }
         : activity
@@ -320,7 +320,7 @@ const MoodTracker: React.FC = () => {
     }
   };
 
-  const completedActivities = activities.filter(a => a.completed).length;
+  const completedActivities = activities.filter((a: Activity) => a.completed).length;
   const completionPercentage = Math.round((completedActivities / activities.length) * 100);
 
   return (
@@ -349,7 +349,7 @@ const MoodTracker: React.FC = () => {
           <NotesArea
             placeholder="How was your day? What influenced your mood? (optional)"
             value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setNotes(e.target.value)}
           />
           
           <SaveButton
@@ -368,7 +368,7 @@ const MoodTracker: React.FC = () => {
                 No mood entries yet. Start tracking your mood today!
               </p>
             ) : (
-              moodHistory.map(entry => (
+              moodHistory.map((entry: MoodEntryType) => (
                 <MoodEntry key={entry.id}>
                   <MoodInfo>
                     <MoodDate>{formatDate(entry.date)}</MoodDate>

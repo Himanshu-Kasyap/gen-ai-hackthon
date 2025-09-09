@@ -96,7 +96,7 @@ const TimerModal = styled.div<{ $isVisible: boolean }>`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  display: ${props => props.$isVisible ? 'flex' : 'none'};
+  display: ${(props: { $isVisible: boolean }) => props.$isVisible ? 'flex' : 'none'};
   justify-content: center;
   align-items: center;
   z-index: 2000;
@@ -212,11 +212,11 @@ const Exercise: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+  let interval: ReturnType<typeof setInterval>;
 
     if (activeTimer && timeLeft > 0 && !isPaused) {
       interval = setInterval(() => {
-        setTimeLeft(prev => {
+        setTimeLeft((prev: number) => {
           if (prev <= 1) {
             playAlarm();
             setActiveTimer(null);

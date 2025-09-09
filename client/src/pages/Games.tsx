@@ -125,8 +125,8 @@ const SequenceButton = styled.button<{ $color: string; $isActive?: boolean }>`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 3px solid ${props => props.$color};
-  background: ${props => props.$isActive ? props.$color : 'white'};
+  border: 3px solid ${(props: { $color: string; $isActive?: boolean }) => props.$color};
+  background: ${(props: { $color: string; $isActive?: boolean }) => props.$isActive ? props.$color : 'white'};
   cursor: pointer;
   transition: all 0.2s ease;
   
@@ -169,8 +169,8 @@ const Input = styled.input`
 `;
 
 const BreathingCircle = styled.div<{ $isExpanded: boolean }>`
-  width: ${props => props.$isExpanded ? '150px' : '100px'};
-  height: ${props => props.$isExpanded ? '150px' : '100px'};
+  width: ${(props: { $isExpanded: boolean }) => props.$isExpanded ? '150px' : '100px'};
+  height: ${(props: { $isExpanded: boolean }) => props.$isExpanded ? '150px' : '100px'};
   border-radius: 50%;
   background: linear-gradient(45deg, #667eea, #764ba2);
   transition: all 4s ease-in-out;
@@ -402,7 +402,7 @@ const Games: React.FC = () => {
             <Input
               type="number"
               value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserAnswer(e.target.value)}
               placeholder="Answer"
             />
           </GameArea>
