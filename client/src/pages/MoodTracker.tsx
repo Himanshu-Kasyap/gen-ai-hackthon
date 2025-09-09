@@ -130,7 +130,7 @@ const MoodHistory = styled.div`
   overflow-y: auto;
 `;
 
-const MoodEntry = styled.div`
+const MoodEntryCard = styled.div`
   padding: 15px;
   border-bottom: 1px solid rgba(102, 126, 234, 0.1);
   display: flex;
@@ -369,7 +369,7 @@ const MoodTracker: React.FC = () => {
               </p>
             ) : (
               moodHistory.map(entry => (
-                <MoodEntry key={entry.id}>
+                <MoodEntryCard key={entry.id}>
                   <MoodInfo>
                     <MoodDate>{formatDate(entry.date)}</MoodDate>
                     <MoodDisplay>
@@ -378,7 +378,7 @@ const MoodTracker: React.FC = () => {
                     </MoodDisplay>
                     {entry.notes && <MoodNotes>{entry.notes}</MoodNotes>}
                   </MoodInfo>
-                </MoodEntry>
+                </MoodEntryCard>
               ))
             )}
           </MoodHistory>

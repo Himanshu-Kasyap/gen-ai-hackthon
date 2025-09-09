@@ -111,12 +111,7 @@ const Score = styled.div`
   margin-bottom: 15px;
 `;
 
-const Timer = styled.div`
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #764ba2;
-  margin-bottom: 15px;
-`;
+
 
 const SequenceDisplay = styled.div`
   display: flex;
