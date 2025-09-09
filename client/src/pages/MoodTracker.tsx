@@ -231,7 +231,7 @@ interface Mood {
   color: string;
 }
 
-interface MoodEntry {
+interface MoodEntryType {
   id: string;
   mood: Mood;
   notes: string;
@@ -267,7 +267,7 @@ const dailyActivities: Activity[] = [
 const MoodTracker: React.FC = () => {
   const [selectedMood, setSelectedMood] = useState<Mood | null>(null);
   const [notes, setNotes] = useState('');
-  const [moodHistory, setMoodHistory] = useState<MoodEntry[]>([
+  const [moodHistory, setMoodHistory] = useState<MoodEntryType[]>([
     {
       id: '1',
       mood: moods[1],
@@ -286,7 +286,7 @@ const MoodTracker: React.FC = () => {
   const saveMoodEntry = () => {
     if (!selectedMood) return;
 
-    const newEntry: MoodEntry = {
+  const newEntry: MoodEntryType = {
       id: Date.now().toString(),
       mood: selectedMood,
       notes: notes.trim(),

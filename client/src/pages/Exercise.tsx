@@ -153,7 +153,7 @@ const TimerButton = styled.button`
   }
 `;
 
-interface Exercise {
+interface ExerciseType {
   id: string;
   title: string;
   description: string;
@@ -161,7 +161,7 @@ interface Exercise {
   type: string;
 }
 
-const exercises: Exercise[] = [
+const exercises: ExerciseType[] = [
   {
     id: '1',
     title: 'Morning Meditation',
@@ -207,10 +207,9 @@ const exercises: Exercise[] = [
 ];
 
 const Exercise: React.FC = () => {
-  const [activeTimer, setActiveTimer] = useState<Exercise | null>(null);
+  const [activeTimer, setActiveTimer] = useState<ExerciseType | null>(null);
   const [timeLeft, setTimeLeft] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
